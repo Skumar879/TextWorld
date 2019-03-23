@@ -11,6 +11,7 @@ public class Node {
 
     public void addNeighbor(Node n){
         //add this node as a neighbor
+        neighbors.add(n);
     }
 
     /**
@@ -18,7 +19,11 @@ public class Node {
      * @return
      */
     public String getNeighborNames(){
-        return " ";
+        String output = "";
+        for (int i = 0; i < neighbors.size(); i++) {
+            output = output + neighbors.get(i).getName() + ", ";
+        }
+        return output;
     }
 
     /**
@@ -27,10 +32,20 @@ public class Node {
      * @return returns neighboring node with correct name
      */
     public Node getNeighbor(String name){
+        for (int i = 0; i < neighbors.size(); i++) {
+             if(name.equals(neighbors.get(i).getName())) return neighbors.get(i);
+        }
         return null;
     }
     public Node getNode(Node j){
-    return null;
+        for (int i = 0; i < neighbors.size(); i++) {
+            if(j.equals(neighbors.get(i))) return neighbors.get(i);
+        }
+        return null;
+    }
+
+    public ArrayList<Node> getNeighborArrayList(){
+        return neighbors;
     }
 
     public String getName(){

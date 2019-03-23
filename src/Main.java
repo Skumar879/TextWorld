@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,9 +10,13 @@ public class Main {
         root.addNeighbor(new Node ("bedroom"));
 
         root.getNeighbor("closet").addNeighbor(new Node("hall"));
+        root.getNeighbor("bedroom").addNeighbor(new Node("living room"));
+        root.getNeighbor("bedroom").getNeighbor("living room").addNeighbor(new Node("kitchen"));
+        root.getNeighbor("bedroom").getNeighbor("living room").addNeighbor(new Node("dining room"));
+        root.getNeighbor("bedroom").getNeighbor("living room").getNeighbor("dining room").addNeighbor(root);
 
+        displaypaths(root);
         //"game loop"  where I get user input and move the player.
-
         Node currentRoom = root;
 
         String response = "";
@@ -35,5 +40,15 @@ public class Main {
             }
 
         } while (!response.equals("quit"));
+    }
+
+    private static void displaypaths(Node root) {
+        if(root.getNeighborArrayList().size() != 0) {
+            for (int i = 0; i < root.getNeighborArrayList().size(); i++) {
+                System.out.print(root.getName() + " ---> " );
+                displaypaths(root.getNeighborArrayList().get(i));
+                System.out.println();
+            }
+        }
     }
 }
