@@ -18,15 +18,19 @@ public class Main {
             System.out.println("You are currently in the " + current.getName());
             System.out.println("What do you want to do? >");
             response = s.nextLine();
-            if (response.substring(0, 2).equals("go")){
-                String room = response.substring()
-            } else if (){
+            String[] words = response.split(" ");
+            if (words[0].equals("go")){
 
-            } else if () {
+            } else if (words[0].equals("look")){
 
-            } else if (){
+            } else if (words[0].equals("add")) {
+                String roomname = "";
+                for(int i = 1; i < words.length; i++){
+                    roomname += words[i] + " ";
+                }
 
-            } else{
+            } else if (words[0].equals("quit")){}
+            else{
 
             }
 
