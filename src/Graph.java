@@ -109,5 +109,15 @@ public class Graph {
             }
             return false;
         }
+
+        public Node getRandomNeighbor(){
+            ArrayList<Node> helpmysoul = new ArrayList<>(neighbors.values());
+            Node random = helpmysoul.get((int)(helpmysoul.size() * Math.random()));
+            return random;
+        }
+
+        public HashMap<String, Node> getNeighborArray(){
+            return neighbors;
+        }
     }
 }
