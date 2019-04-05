@@ -1,7 +1,7 @@
 public class Chicken extends Creature{
 
-    public Chicken(Graph.Node room){
-        setCurrentroom(room);
+    public Chicken(Room startingroom){
+        setCurrentroom(startingroom);
     }
 
     @Override

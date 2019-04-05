@@ -4,7 +4,7 @@ public class Player {
     String name;
     String description;
     ArrayList<Item> inventory;
-    Graph.Node currentroom;
+    Room currentroom;
 
     public Player(String name, String description){
         this.name = name;
@@ -38,11 +38,11 @@ public class Player {
         }
     }
 
-    public Graph.Node getCurrentroom() {
+    public Room getCurrentroom() {
         return currentroom;
     }
 
-    public void setCurrentroom(Graph.Node newroom) {
+    public void setCurrentroom(Room newroom) {
         currentroom = newroom;
     }
 

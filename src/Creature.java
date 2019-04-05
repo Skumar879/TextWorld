@@ -1,5 +1,5 @@
 public abstract class Creature {
-    protected Graph.Node currentroom;
+    protected Room currentroom;
     protected String name;
     protected String description;
 
@@ -15,11 +15,11 @@ public abstract class Creature {
         this.name = name;
     }
 
-    public Graph.Node getCurrentroom() {
+    public Room getCurrentroom() {
         return currentroom;
     }
 
-    public void setCurrentroom(Graph.Node currentroom) {
+    public void setCurrentroom(Room currentroom) {
         this.currentroom = currentroom;
     }
 }
