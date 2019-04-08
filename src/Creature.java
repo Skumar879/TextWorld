@@ -1,9 +1,10 @@
+import java.util.HashMap;
+
 public abstract class Creature {
     protected Room currentroom;
     protected String name;
     protected String description;
-
-    public abstract void move();
+    HashMap<String, Item> items;
 
     public abstract void act();
 

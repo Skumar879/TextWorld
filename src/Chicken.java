@@ -4,14 +4,10 @@ public class Chicken extends Creature{
         setCurrentroom(startingroom);
     }
 
-    @Override
-    public void move() {
+
+    public void act() {
         int randomRoom = (int)(Math.random()*currentroom.getNeighborArray().size());
         setCurrentroom(currentroom.getRandomNeighbor());
     }
 
-    @Override
-    public void act() {
-        move();
-    }
 }

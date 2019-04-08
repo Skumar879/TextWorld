@@ -1,7 +1,7 @@
-public class Wumpus extends Creature{
+public class PopStars extends Creature{
     Player avoid;
 
-    public Wumpus(Room startingroom, Player player){
+    public PopStars(Room startingroom, Player player){
         setCurrentroom(startingroom);
         avoid = player;
     }
