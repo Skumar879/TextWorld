@@ -3,16 +3,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Level g = new Level();
-        g.addNode("hall");
-        g.addNode("closet");
-        g.addNode("dungeon");
+        g.addNode("Hall");
+        g.addNode("Closet");
+        g.addNode("Dungeon");
 
-        g.addDirectedEdge("hall", "dungeon");
-        g.addUndirectedEdge("hall", "closet");
+        g.addUndirectedEdge("Hall", "Dungeon");
+        g.addUndirectedEdge("Hall", "Closet");
+        g.addUndirectedEdge("Closet", "Dungeon");
 //        Graph.Node current = g.getNode("hall");
-
+        Chicken c = new Chicken(g.getNode("Closet"));
         Player a = new Player("Bob", "pretty boring guy");
-        a.setCurrentroom(g.getNode("hall"));
+        a.setCurrentroom(g.getNode("Hall"));
 
 
         String response = "";
@@ -37,7 +38,8 @@ public class Main {
                 }
             } else if (words[0].equals("look")){
                 if(!a.getCurrentroom().displayItems().equals("")) System.out.println(a.getCurrentroom().displayItems());
-                else{ System.out.println("Item does not contain any items.");}
+                else{ System.out.println(a.getCurrentroom().getName() + " does not contain any items.");}
+                System.out.println("Chicken is in " + c.getCurrentroom().getName());
             } else if (words[0].equals("add")) {
                 String roomname = "";
                 for(int i = 1; i < words.length; i++){
@@ -66,7 +68,7 @@ public class Main {
             } else{
                 System.out.println("Please enter a valid command.");
             }
-
+        c.act();
         } while (!response.equals("quit"));
 
     }

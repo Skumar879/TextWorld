@@ -44,7 +44,7 @@ public class Room {
 
         public String displayItems(){
             String output = "";
-            if(items.size() != 0) {
+            if(items != null && items.size() != 0) {
                 output += "Items in room: ";
                 for (Item a : items) output += a.getName() + "; ";
             }
