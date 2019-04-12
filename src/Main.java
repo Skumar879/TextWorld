@@ -14,6 +14,8 @@ public class Main {
         Chicken c = new Chicken(g.getNode("Closet"));
         Player a = new Player("Bob", "pretty boring guy");
         a.setCurrentroom(g.getNode("Hall"));
+        Wumpus b = new Wumpus(g.getNode("Closet"), a);
+        PopStars d = new PopStars(g.getNode("Hall"), a);
 
 
         String response = "";
@@ -40,6 +42,8 @@ public class Main {
                 if(!a.getCurrentroom().displayItems().equals("")) System.out.println(a.getCurrentroom().displayItems());
                 else{ System.out.println(a.getCurrentroom().getName() + " does not contain any items.");}
                 System.out.println("Chicken is in " + c.getCurrentroom().getName());
+                System.out.println("Wumpus is in " + b.getCurrentroom().getName());
+                System.out.println("PopTarts, I mean, Popstars, is in " + d.getCurrentroom().getName());
             } else if (words[0].equals("add")) {
                 String roomname = "";
                 for(int i = 1; i < words.length; i++){
